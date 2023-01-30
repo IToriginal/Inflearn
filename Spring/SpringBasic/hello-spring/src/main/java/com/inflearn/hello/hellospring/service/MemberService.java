@@ -2,7 +2,7 @@ package com.inflearn.hello.hellospring.service;
 
 import com.inflearn.hello.hellospring.domain.Member;
 import com.inflearn.hello.hellospring.repository.MemberRepository;
-import com.inflearn.hello.hellospring.repository.MemoryMemberRepositoy;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.Optional;
