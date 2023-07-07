@@ -28,5 +28,22 @@ public class _04_switch_case {
             default -> System.out.println("아쉽게도 장학금 대상이 아닙니다.");
         }
         System.out.println("조회가 완료되었습니다.");
+
+        // 중고 상품의 등급에 따른 가격을 측정하는 시스템 (1급: 최상 ~ 4급: 최하)
+        int grade = 1;
+        int price = 7000; // 기본 가격
+        switch (grade) {
+            case 1:
+                price += 1000;
+            case 2:
+                price += 1000;
+            case 3:
+                price += 1000;
+                break;
+        }
+        System.out.println(grade + "등급 제품의 가격: " + price + "원");
+        // 1등급 제품의 가격: 10000원
+        // 2등급 제품의 가격: 9000원
+
     }
 }
