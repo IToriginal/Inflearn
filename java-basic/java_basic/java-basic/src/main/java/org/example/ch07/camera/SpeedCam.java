@@ -1,5 +1,6 @@
 package org.example.ch07.camera;
 
+// SpeedCam is a Camera (Is - A 관계)
 public class SpeedCam extends Camera{ // 자식 클래스
 
     public SpeedCam() {

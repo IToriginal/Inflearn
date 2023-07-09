@@ -1,5 +1,6 @@
 package org.example.ch07.camera;
 
+// FactoryCam is a Camera (Is - A 관계)
 public class FactoryCam extends Camera{ // 자식 클래스
 
     public FactoryCam() {
