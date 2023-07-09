@@ -1,5 +1,7 @@
 package org.example.ch07;
 
+import com.sun.security.auth.UnixNumericGroupPrincipal;
+
 public class BlackBox {
     // 인스턴스 변수(필드) 생성
     String modelName; // 모델명
@@ -18,19 +20,19 @@ public class BlackBox {
     static boolean canAutoReport = false;
 
     BlackBox() {
-        System.out.println("기본 생성자 호출");
-        this.serialNumber = ++counter;
-        System.out.println("새로운 시리얼 넘버를 발급받았습니다..." + this.serialNumber);
+        // System.out.println("기본 생성자 호출");
+        // this.serialNumber = ++counter;
+        // System.out.println("새로운 시리얼 넘버를 발급받았습니다..." + this.serialNumber);
     }
 
     BlackBox(String modelName, String resolution, int price, String color) {
-        this(); // 기본 생성자 호출
-
-        System.out.println("사용자 정의 생성자 호출");
-        this.modelName = modelName;
-        this.resolution = resolution;
-        this.price = price;
-        this.color = color;
+        // this(); // 기본 생성자 호출
+        //
+        // System.out.println("사용자 정의 생성자 호출");
+        // this.modelName = modelName;
+        // this.resolution = resolution;
+        // this.color = color;
+        // this.price = price;
     }
 
     // 자동 신고 method
@@ -85,5 +87,49 @@ public class BlackBox {
         // this.을 붙혀 사용하게되면 클래스의 인스턴스변수에 직접 접근이 가능해진다.
         // 파라미터변수와 이름이 같을 경우에는 this를 꼭 붙혀서 사용해야한다.
         this.modelName += modelName;
+    }
+
+    /**
+     * Getter & Setter
+     * Getter: 값을 가져옴
+     * Setter: 값을 설정함
+     */
+    String getModelName() {
+        return modelName;
+    }
+
+    void setModelName(String modelName) {
+        this.modelName = modelName;
+    }
+
+    String getResolution() {
+        if (resolution == null || resolution.isEmpty()) {
+            return "판매자에게 문의하세요";
+        }
+        return resolution;
+    }
+
+    void setResolution(String resolution) {
+        this.resolution = resolution;
+    }
+
+    int getPrice() {
+        return price;
+    }
+
+    void setPrice(int price) {
+        if (price < 100000) {
+            this.price = 100000;
+        } else {
+            this.price = price;
+        }
+    }
+
+    String getColor() {
+        return color;
+    }
+
+    void setColor(String color) {
+        this.color = color;
     }
 }
