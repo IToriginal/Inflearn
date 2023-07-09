@@ -70,10 +70,6 @@ class HamBurger {
     public void cook() {
         System.out.println(this.name + "를 만듭니다.");
         System.out.println("빵 사이에 들어가는 재료는?");
-        meterial();
-    }
-
-    public void meterial() {
         System.out.println("> 양상추");
         System.out.println("+ 패티");
         System.out.println("+ 피클");
@@ -85,8 +81,8 @@ class Cheeseberger extends HamBurger {
         super("치즈버거");
     }
 
-    public void meterial() {
-        super.meterial();
+    public void cook() {
+        super.cook();
         System.out.println("+ 치즈");
     }
 }
@@ -95,8 +91,9 @@ class ShrimpBuger extends HamBurger {
     public ShrimpBuger() {
         super("새우버거");
     }
-    public void meterial() {
-        super.meterial();
+
+    public void cook() {
+        super.cook();
         System.out.println("+ 새우");
     }
 }
