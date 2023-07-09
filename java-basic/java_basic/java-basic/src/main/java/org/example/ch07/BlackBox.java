@@ -60,4 +60,10 @@ public class BlackBox {
     static void callServiceCenter() {
         System.out.println("서비스 센터(1588-0000)로 연결합니다.");
     }
+
+    void appendModelName(String modelName) {
+        // this.을 붙혀 사용하게되면 클래스의 인스턴스변수에 직접 접근이 가능해진다.
+        // 파라미터변수와 이름이 같을 경우에는 this를 꼭 붙혀서 사용해야한다.
+        this.modelName += modelName;
+    }
 }
