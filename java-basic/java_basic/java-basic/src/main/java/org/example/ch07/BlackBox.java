@@ -35,4 +35,25 @@ public class BlackBox {
         }
         return 10;
     }
+
+    /**
+     * @param showDateTime : 날짜 정보 표시 여부
+     * @param showSpeed: 속도 정보 표시 여부
+     * @param min: 영상 기록 단위(분)
+     */
+    void record(boolean showDateTime, boolean showSpeed, int min) {
+        System.out.println("녹화를 시작합니다.");
+        if (showDateTime) {
+            System.out.println("영상에 날짜 정보가 표시됩니다.");
+        }
+        if (showSpeed) {
+            System.out.println("영상에 속도 정보가 표시됩니다.");
+        }
+        System.out.println("영상은 " + min + "분 단위로 기록됩니다.");
+    }
+
+    // 디폴트 값 설정
+    void record() {
+        record(true, true, 5);
+    }
 }
