@@ -4,7 +4,16 @@ package org.example.ch07.camera;
 public class FactoryCam extends Camera{ // 자식 클래스
 
     public FactoryCam() {
-        this.name = "공장 카메라";
+        // this.name = "공장 카메라";
+        super("공장 카메라");
+    }
+
+    /**
+     * 동영상 녹화후 화재 감지를 함께
+     */
+    public void recordVideo() {
+        super.recordVideo();
+        detectFire();
     }
 
     /**
