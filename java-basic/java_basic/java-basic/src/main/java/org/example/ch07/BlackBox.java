@@ -9,4 +9,7 @@ public class BlackBox {
     int price; // 가격
 
     String color; // 색상
+
+    // Class 변수
+    static boolean canAutoReport = false;
 }
