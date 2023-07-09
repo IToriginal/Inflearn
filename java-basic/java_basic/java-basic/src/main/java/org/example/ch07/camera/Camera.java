@@ -20,4 +20,11 @@ public class Camera { // 부모 클래스
     public void recordVideo() {
         System.out.println(this.name + ": 동영상을 녹화합니다.");
     }
+
+    /**
+     * 주요 기능을 소개하는 메소드
+     */
+    public void showMainFeature() {
+        System.out.println(this.name + "의 주요 기능: 사진 촬영, 동영상 녹화");
+    }
 }
