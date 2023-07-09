@@ -10,8 +10,28 @@ public class BlackBox {
 
     String color; // 색상
 
+    int serialNumber; // 시리얼 번호
+
+    static int counter = 0; // 시리얼 번호를 생성해주는 역할 (++: 처음에는 0으로 시작해 증가시킬 예정)
+
     // Class 변수
     static boolean canAutoReport = false;
+
+    BlackBox() {
+        System.out.println("기본 생성자 호출");
+        this.serialNumber = ++counter;
+        System.out.println("새로운 시리얼 넘버를 발급받았습니다..." + this.serialNumber);
+    }
+
+    BlackBox(String modelName, String resolution, int price, String color) {
+        this(); // 기본 생성자 호출
+
+        System.out.println("사용자 정의 생성자 호출");
+        this.modelName = modelName;
+        this.resolution = resolution;
+        this.price = price;
+        this.color = color;
+    }
 
     // 자동 신고 method
     void autoReport() {
