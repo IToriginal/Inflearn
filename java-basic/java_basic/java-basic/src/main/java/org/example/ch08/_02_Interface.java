@@ -1,5 +1,9 @@
 package org.example.ch08;
 
+import org.example.ch08.camera.FactoryCam;
+import org.example.ch08.detector.AdvancedFireDetector;
+import org.example.ch08.detector.Detectable;
+import org.example.ch08.detector.FireDetector;
 import org.example.ch08.reporter.NomalReporter;
 import org.example.ch08.reporter.Reportable;
 import org.example.ch08.reporter.VideoReporter;
@@ -14,5 +18,22 @@ public class _02_Interface {
 
         Reportable videoReporter = new VideoReporter();
         videoReporter.report();
+
+        System.out.println("--------- 구분선 ---------");
+
+        Detectable fireDetector = new FireDetector();
+        fireDetector.detect();
+
+        Detectable advancedFireDetector = new AdvancedFireDetector();
+        advancedFireDetector.detect();
+
+        System.out.println("--------- 구분선 ---------");
+
+        FactoryCam factoryCam = new FactoryCam();
+        factoryCam.setDetector(advancedFireDetector);
+        factoryCam.setReportor(videoReporter);
+
+        factoryCam.detect();
+        factoryCam.report();
     }
 }
