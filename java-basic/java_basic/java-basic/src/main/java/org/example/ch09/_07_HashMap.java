@@ -1,4 +1,4 @@
-package org.example.ch09.user;
+package org.example.ch09;
 
 import java.util.HashMap;
 
