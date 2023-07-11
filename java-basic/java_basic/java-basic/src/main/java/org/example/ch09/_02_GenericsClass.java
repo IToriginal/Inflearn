@@ -58,5 +58,19 @@ public class _02_GenericsClass {
 
         CoffeeByUser<User> c8 = new CoffeeByUser<>(new VIPUser("마크"));
         c8.ready();
+
+        System.out.println("---------- 구분선 ----------");
+        orderCoffee("진저");
+        orderCoffee(36);
+        orderCoffee("티구안", "아이스라떼");
+        orderCoffee(37, "아이스라떼");
+    }
+
+    public static <T> void orderCoffee(T name) {
+        System.out.println("커피 준비 완료: " + name);
+    }
+
+    public static <T, V> void orderCoffee(T name, V coffee) {
+        System.out.println(coffee + " 커피 준비 완료: " + name);
     }
 }
