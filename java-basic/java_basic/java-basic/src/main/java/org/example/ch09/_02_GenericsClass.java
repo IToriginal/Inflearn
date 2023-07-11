@@ -4,6 +4,9 @@ import org.example.ch09.coffee.Coffee;
 import org.example.ch09.coffee.CoffeeByName;
 import org.example.ch09.coffee.CoffeeByNickname;
 import org.example.ch09.coffee.CoffeeByNumber;
+import org.example.ch09.coffee.CoffeeByUser;
+import org.example.ch09.user.User;
+import org.example.ch09.user.VIPUser;
 
 /**
  * 제네릭 클래스
@@ -45,5 +48,15 @@ public class _02_GenericsClass {
         c6.ready();
         String c6Name = c6.name;
         System.out.println("주문 고객 이름: " + c6Name);
+
+        System.out.println("---------- 구분선 ----------");
+
+        CoffeeByUser<User> c7 = new CoffeeByUser<>(new User("스티브"));
+        c7.ready();
+
+        System.out.println("---------- 구분선 ----------");
+
+        CoffeeByUser<User> c8 = new CoffeeByUser<>(new VIPUser("마크"));
+        c8.ready();
     }
 }
