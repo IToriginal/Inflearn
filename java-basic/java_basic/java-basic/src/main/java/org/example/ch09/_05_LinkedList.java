@@ -1,5 +1,6 @@
 package org.example.ch09;
 
+import java.util.Collections;
 import java.util.LinkedList;
 
 public class _05_LinkedList {
@@ -36,6 +37,47 @@ public class _05_LinkedList {
         list.add(1, "진저");
         System.out.println(list);
 
+        System.out.println("---------- 구분선 ----------");
 
+        // 삭제
+        list.remove(list.size() - 1);
+        System.out.println(list);
+
+        System.out.println("---------- 구분선 ----------");
+
+        // 0번과 마지막 인덱스 삭제
+        list.removeFirst();
+        list.removeLast();
+        System.out.println(list);
+
+        System.out.println("---------- 구분선 ----------");
+
+        // 변경
+        list.set(0, "클롭");
+        System.out.println(list);
+
+        System.out.println("---------- 구분선 ----------");
+
+        // 조회
+        System.out.println(list.indexOf("피치"));
+        System.out.println(list.contains("피치"));
+
+        // 전체 삭제
+        list.clear();
+        System.out.println(list);
+
+        System.out.println("---------- 구분선 ----------");
+
+        // Data 추가
+        list.add("마이콜");
+        list.add("티구안");
+        list.add("피치");
+        list.add("람보");
+        list.add("카티치");
+
+        // 정렬
+        System.out.println(list);
+        Collections.sort(list);
+        System.out.println(list);
     }
 }
