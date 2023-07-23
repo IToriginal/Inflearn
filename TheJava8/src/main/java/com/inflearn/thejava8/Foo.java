@@ -1,5 +1,11 @@
 package com.inflearn.thejava8;
 
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
+
 /**
  * 자바에서 함수형 프로그래밍
  * - 함수를 First class object로 사용할 수 있다.
@@ -12,8 +18,30 @@ package com.inflearn.thejava8;
  */
 public class Foo {
     public static void main(String[] args) {
-        int baseNumber = 10;
-        RunSomething runSomething = number -> number + baseNumber;
 
+        // Function<Integer, Integer> plus10 = (number) -> number + 10;
+        // Function<Integer, Integer> multiply2 = (number) -> number * 2;
+        // Funtion<Integer, Integer> == UnaryOperator<Integer> 타입이 같을 때 사용 가능
+        UnaryOperator<Integer> plus10 = (number) -> number + 10;
+        UnaryOperator<Integer> multiply2 = (number) -> number * 2;
+
+        Function<Integer, Integer> plus10AndThenMultiply2 = plus10.andThen(multiply2);
+        System.out.println(plus10AndThenMultiply2.apply(2)); // (2 + 10) * 2 = 24
+
+        Function<Integer, Integer> multiply2ComposePlus10 = plus10.compose(multiply2);
+        System.out.println(multiply2ComposePlus10.apply(2)); // 2 * 2 + 10 = 14
+
+        Consumer<Integer> printT = (i) -> System.out.println(i);
+        printT.accept(10);
+
+        Supplier<Integer> get10 = () -> 10;
+        System.out.println(get10);
+
+        Predicate<String> startsWithName = (s) -> s.startsWith("hu");
+        boolean startsWithNameResult = startsWithName.test("hun");
+        System.out.println(startsWithNameResult); // true
+        Predicate<Integer> isEven = (i) -> i % 2 == 0;
+        boolean isEvenResult = isEven.test(10);
+        System.out.println(isEvenResult); // true
     }
 }
