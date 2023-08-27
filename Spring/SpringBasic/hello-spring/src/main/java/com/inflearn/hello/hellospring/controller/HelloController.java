@@ -13,16 +13,19 @@ public class HelloController {
         model.addAttribute("data", "hello!!");
         return "hello";
     }
+
     @GetMapping("hello-mvc")
-    public String helloMvc(@RequestParam("name") String name, Model model) {
+    public String helloMvc(@RequestParam(value = "name") String name, Model model) {
         model.addAttribute("name", name);
         return "hello-template";
     }
+
     @GetMapping("hello-string")
-    @ResponseBody //HTTP 응답 프로토콜에 직접 name을 넣어주기 위해 사용
+    @ResponseBody
     public String helloString(@RequestParam("name") String name) {
-        return "hello " + name; //"hello spring"
+        return "hello " + name; // hello "spring"
     }
+
     @GetMapping("hello-api")
     @ResponseBody
     public Hello helloApi(@RequestParam("name") String name) {
@@ -30,11 +33,14 @@ public class HelloController {
         hello.setName(name);
         return hello;
     }
+
     static class Hello {
         private String name;
+
         public String getName() {
             return name;
         }
+
         public void setName(String name) {
             this.name = name;
         }
