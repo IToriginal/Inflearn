@@ -1,10 +1,10 @@
 package com.inflearn.hello.hellospring.repository;
 
-import com.inflearn.hello.hellospring.domain.Member;
-
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
+
+import com.inflearn.hello.hellospring.domain.Member;
+
 
 public interface MemberRepository {
     Member save(Member member);
